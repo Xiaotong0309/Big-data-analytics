@@ -74,7 +74,7 @@ d3 = pd.read_csv("clean/tweet_public.csv")
 
 def init(length):
     data = {}
-    if length == 3:
+    if length != 11:
         data['all_user'] = [0.0]*length
         data['public_user'] = [0.0]*length
     data['user_with_tweet'] = [0.0]*length
@@ -173,7 +173,7 @@ def plot_feature_tweet():
     x_list = list(range(len(x_axis)))
     plot_acc(data, "deleted feature", "accuracy", "Accuracy score under different deleted feature", x_axis)
 
-plot_split_size()
+plot_test_size()
 plot_model()
 plot_feature_user()
 plot_feature_tweet()
