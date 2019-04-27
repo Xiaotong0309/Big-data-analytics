@@ -50,13 +50,15 @@ def input_data(status, user_true_path, user_false_path, tweets_true_path, tweets
     #user_name, user_id
     user = user.rename(columns = {'screen_name':'user_name'})
     user = user.rename(columns = {'id':'user_id'})
+    user = user.rename(columns = {'followers_count':'followers'})
+    user = user.rename(columns = {'friends_count':'friends'})
     #followers
     #print(user['followers_count'].head(5))
-    user['followers'] = user['followers_count'].apply(lambda x: 1 if x > follower_threshold else 0)
+    #user['followers'] = user['followers_count'].apply(lambda x: 1 if x > follower_threshold else 0)
     #print(user['followers'].head(5))
     #friends
     #print(user['friends_count'].head(5))
-    user['friends'] = user['friends_count'].apply(lambda x: 1 if x > friend_threshold else 0)
+    #user['friends'] = user['friends_count'].apply(lambda x: 1 if x > friend_threshold else 0)
     #print(user['friends'].head(5))
     print(user.shape)
     #has_number
@@ -139,15 +141,15 @@ def input_data(status, user_true_path, user_false_path, tweets_true_path, tweets
     print(res.shape)
     #print(res.head(5))
     #print(res.tail(5))
-    return res.sample(frac=1)
+    return res.tail(2200)
 
 user_true_path = "datasets_full/datasets_full.csv/genuine_accounts.csv/users.csv"
-tweets_true_path = "fake/datasets_full/datasets_full.csv/genuine_accounts.csv/tweets.csv"
+tweets_true_path = "datasets_full/datasets_full.csv/genuine_accounts.csv/tweets.csv"
 user_false_path = "datasets_full/datasets_full.csv/fake_followers.csv/users.csv"
 tweets_false_path = "datasets_full/datasets_full.csv/fake_followers.csv/tweets.csv"
 follower_threshold = 30
 friend_threshold = 100
-dataset = input_data(-1, user_true_path, user_false_path, tweets_true_path, tweets_false_path, follower_threshold, friend_threshold)
-dataset.to_csv("user_all.csv")
+#dataset = input_data(-1, user_true_path, user_false_path, tweets_true_path, tweets_false_path, follower_threshold, friend_threshold)
+#dataset.to_csv("clean/user_all.csv", index=False)
 dataset = input_data(1, user_true_path, user_false_path, tweets_true_path, tweets_false_path, follower_threshold, friend_threshold)
-dataset.to_csv("user_public.csv")
+dataset.to_csv("clean/user_public.csv", index=False)
