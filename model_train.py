@@ -66,11 +66,11 @@ def model_select(model, dataset, index, split_size, delete_feature):
 
 
 
-iter = 50
+iter = 1000
 
-d1 = pd.read_csv("clean/user_all.csv")
-d2 = pd.read_csv("clean/user_public.csv")
-d3 = pd.read_csv("clean/tweet_public.csv")
+d1 = pd.read_csv("clean1/user_all.csv")
+d2 = pd.read_csv("clean1/user_public.csv")
+d3 = pd.read_csv("clean1/tweet_public.csv")
 
 def init(length):
     data = {}
@@ -94,7 +94,7 @@ def plot_acc(data, xlabel, ylabel, title, x_axis):
     plt.show()
 #plot split_size
 def plot_test_size():
-    x_axis = list(range(10, 70, 5))
+    x_axis = list(range(10, 70, 1))
     data = init(len(x_axis))
     for t in range(iter):
         for i in range(len(x_axis)):
