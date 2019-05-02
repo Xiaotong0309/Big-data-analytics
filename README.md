@@ -59,7 +59,7 @@ analyzing youtubers' data.ipynb
 
 ### Key Results:
 
-Key results consists of screenshots of model evaluation and result analytics.
+Key results consists of screenshots of model evaluation, execution trace, and result analytics.
 
 ### Project Report included.
 
