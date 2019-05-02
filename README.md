@@ -17,7 +17,7 @@ We are building a model to estimate the percentage of fake followers in Twitter 
 
 1) twitter_data: A sample dataset queried from Twitter consisting of both public and private user profiles
 
-2) clean: cleaned data from MIB dataset(private data, not provided on Github)
+2) clean: cleaned data from MIB dataset
 
 3) data.zip: Queried 5 youtubers followers profile and tweets information
 
