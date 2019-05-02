@@ -45,6 +45,18 @@ python predict.py
 
 3) Analyzation - consists of jupyter notebooks for analysing the benchmark dataset and analysing youtubers data.
 
+Add the sample dataset and obtain the MIB dataset from this link - http://mib.projects.iit.cnr.it/dataset.html and add them to same folder as these codes. These notebooks can be run in jupyter notebook through the Anaconda Console.
+```
+Analyzing training data- MIB dataset.ipynb 
+```
+
+```
+analyzing youtubers' data.ipynb
+```
+
+
+
+
 ### Key Results:
 
 Key results consists of screenshots of model evaluation and result analytics.
