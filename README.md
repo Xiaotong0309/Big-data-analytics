@@ -40,7 +40,7 @@ python model_train.py
 
 predict results by executing the following command. Need to change the path to the folder contains cleaned data and queried data
 ```
-python model_train.py
+python predict.py
 ```
 
 3) Analyzation - consists of jupyter notebooks for analysing the benchmark dataset and analysing youtubers data.
